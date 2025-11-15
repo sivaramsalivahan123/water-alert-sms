@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar onRecipientChange={setRecipientNumber} />
-      <main className="py-8">
+      <main className="py-4 sm:py-8">
         <MessageControl recipientNumber={recipientNumber} />
       </main>
     </div>

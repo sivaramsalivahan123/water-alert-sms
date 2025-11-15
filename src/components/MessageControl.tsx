@@ -38,24 +38,24 @@ export const MessageControl = ({ recipientNumber }: MessageControlProps) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-8">
+    <div className="w-full max-w-4xl mx-auto px-4 py-4 sm:py-8">
       <Card className="border-0 shadow-lg bg-gradient-card">
-        <CardHeader>
-          <CardTitle className="text-2xl">Message Control Panel</CardTitle>
-          <CardDescription>
+        <CardHeader className="pb-4">
+          <CardTitle className="text-xl sm:text-2xl">Message Control Panel</CardTitle>
+          <CardDescription className="text-sm">
             Send commands to {recipientNumber || "recipient"}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             <Button
               onClick={() => sendMessage("start")}
               disabled={isSending || !recipientNumber}
               size="lg"
-              className="h-32 flex flex-col gap-3 bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow"
+              className="h-28 sm:h-32 flex flex-col gap-2 sm:gap-3 bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow touch-manipulation"
             >
-              <Play className="h-8 w-8" />
-              <span className="text-lg font-semibold">Send START</span>
+              <Play className="h-7 w-7 sm:h-8 sm:w-8" />
+              <span className="text-base sm:text-lg font-semibold">Send START</span>
             </Button>
 
             <Button
@@ -63,20 +63,20 @@ export const MessageControl = ({ recipientNumber }: MessageControlProps) => {
               disabled={isSending || !recipientNumber}
               size="lg"
               variant="destructive"
-              className="h-32 flex flex-col gap-3 shadow-md"
+              className="h-28 sm:h-32 flex flex-col gap-2 sm:gap-3 shadow-md touch-manipulation"
             >
-              <Square className="h-8 w-8" />
-              <span className="text-lg font-semibold">Send STOP</span>
+              <Square className="h-7 w-7 sm:h-8 sm:w-8" />
+              <span className="text-base sm:text-lg font-semibold">Send STOP</span>
             </Button>
 
             <Button
               onClick={() => sendMessage("water_status")}
               disabled={isSending || !recipientNumber}
               size="lg"
-              className="h-32 flex flex-col gap-3 bg-success hover:bg-success/90 text-success-foreground shadow-md"
+              className="h-28 sm:h-32 flex flex-col gap-2 sm:gap-3 bg-success hover:bg-success/90 text-success-foreground shadow-md touch-manipulation"
             >
-              <Droplet className="h-8 w-8" />
-              <span className="text-lg font-semibold">Water Status</span>
+              <Droplet className="h-7 w-7 sm:h-8 sm:w-8" />
+              <span className="text-base sm:text-lg font-semibold">Water Status</span>
             </Button>
           </div>
         </CardContent>
